@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const environment = {\n  production: true,\n  baseApi: 'https://fakestoreapi.com/' // نفس الرابط أو رابط الـ production إذا مختلف\n};","map":null,"metadata":{},"sourceType":"module"}
