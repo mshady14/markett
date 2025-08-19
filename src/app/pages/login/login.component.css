@@ -1,0 +1,52 @@
+
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, tan, teal, red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInBackground 1.2s ease-in-out;
+}
+
+.login-card {
+  background-color: rgba(20, 20, 20, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  animation: slideUp 1s ease-in-out;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+}
+
+.brand-icon i {
+  font-size: 3rem;
+  color: #0d6efd;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #0d6efd;
+}
+
+
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}

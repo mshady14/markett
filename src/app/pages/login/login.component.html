@@ -1,0 +1,84 @@
+<div class="login-wrapper d-flex align-items-center justify-content-center">
+  <div class="container px-3">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+        <div class="card login-card shadow-lg border-0">
+          <div class="card-body p-4 p-md-5">
+            <div class="text-center mb-4">
+              <div class="brand-icon mb-2">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <h4 class="text-white mb-1 fw-semibold">HOLA</h4>
+              <p class="text-secondary m-0">sign in to your account</p>
+            </div>
+
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label class="form-label text-white-50">Username</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-dark text-secondary border-0">
+                    <i class="bi bi-person"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control bg-dark text-white border-0"
+                    placeholder="username"
+                    formControlName="username"
+                  />
+                </div>
+                <div class="form-text text-danger" *ngIf="form.get('username')?.touched && form.get('username')?.invalid">
+                  Enter a valid username (at least 3 characters).
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label text-white-50">Password</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-dark text-secondary border-0">
+                    <i class="bi bi-lock"></i>
+                  </span>
+                  <input
+                    type="password"
+                    class="form-control bg-dark text-white border-0"
+                    placeholder="••••••••"
+                    formControlName="password"
+                  />
+                </div>
+                <div class="form-text text-danger" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+                  Password must be at least 6 characters.
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="remember" formControlName="remember">
+                  <label class="form-check-label text-white-50" for="remember">
+                    Remember me
+                  </label>
+                </div>
+                <a href="#" class="small text-decoration-none text-secondary">Forgot password?</a>
+              </div>
+
+              <button class="btn btn-primary w-100 py-2 fw-semibold" type="submit" [disabled]="loading">
+                <span *ngIf="!loading">Sign In</span>
+                <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              </button>
+
+              <div class="alert alert-danger mt-3 py-2" *ngIf="errorMsg">
+                {{ errorMsg }}
+              </div>
+            </form>
+
+            <p class="text-center small text-secondary mt-4 mb-0">
+              Don't have an account? <a href="#" class="text-decoration-none">Register now</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center text-white-50 mt-3">
+          <p class="mb-0">© 2025 shady. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
